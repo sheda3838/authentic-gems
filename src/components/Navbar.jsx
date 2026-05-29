@@ -25,12 +25,13 @@ const Navbar = () => {
     { name: 'Certification', to: 'certification' },
     { name: 'Global Buyers', to: 'global-buyers' },
     { name: 'Safe Buying', to: 'buyer-protection' },
+    { name: 'Testimonials', to: 'testimonials' },
     { name: 'Collection', to: 'what-we-offer' },
   ];
 
   return (
     <div className="fixed top-0 w-full z-50 flex justify-center pt-6 px-4 pointer-events-none">
-      <nav className={`pointer-events-auto transition-all duration-500 rounded-full w-full max-w-5xl ${
+      <nav className={`pointer-events-auto transition-all duration-500 rounded-full w-full max-w-6xl ${
         scrolled 
         ? 'bg-background/40 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] py-3 px-6' 
         : 'bg-white/[0.03] backdrop-blur-md border border-white/5 py-4 px-8 shadow-[0_4px_24px_rgba(0,0,0,0.2)]'
@@ -51,7 +52,7 @@ const Navbar = () => {
 
           {/* Desktop Nav */}
           {isHomePage && (
-            <div className="hidden md:flex items-center gap-5 lg:gap-8">
+            <div className="hidden lg:flex items-center gap-4 xl:gap-8">
               {navLinks.map((link) => (
                 <ScrollLink
                   key={link.name}

@@ -51,3 +51,28 @@
     overflow-x: hidden;
   }
 }
+
+@layer utilities {
+  @keyframes marquee-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-33.333333%); }
+  }
+  
+  @keyframes marquee-right {
+    from { transform: translateX(-33.333333%); }
+    to { transform: translateX(0); }
+  }
+
+  .animate-marquee-left {
+    animation: marquee-left linear infinite;
+  }
+
+  .animate-marquee-right {
+    animation: marquee-right linear infinite;
+  }
+
+  .group:hover .animate-marquee-left,
+  .group:hover .animate-marquee-right {
+    animation-play-state: paused;
+  }
+}

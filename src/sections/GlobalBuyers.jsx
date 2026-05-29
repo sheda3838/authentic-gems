@@ -28,7 +28,7 @@ const MapNode = ({ name, cx, cy, delay, labelClasses }) => (
     {/* Core Dot */}
     <div className="w-2 h-2 bg-luxury rounded-full shadow-[0_0_10px_rgba(212,175,55,1)] z-10 relative group-hover:scale-150 transition-transform duration-300"></div>
     {/* Label */}
-    <div className={`absolute ${labelClasses} text-white font-medium text-[10px] md:text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 lg:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]`}>
+    <div className={`absolute ${labelClasses} text-white font-medium text-[10px] md:text-xs uppercase tracking-widest opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]`}>
       {name}
     </div>
   </motion.div>

@@ -21,7 +21,7 @@ const Contact = () => {
       <div className="absolute bottom-0 right-1/4 translate-x-1/4 translate-y-1/4 w-[600px] h-[600px] bg-accent/5 blur-[150px] rounded-full pointer-events-none" />
 
       <Container className="relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24 items-center">
           
           {/* LEFT SIDE: Contact Info */}
           <div className="flex flex-col">
@@ -43,7 +43,7 @@ const Contact = () => {
               Authentic Gems International specializes in trusted international gemstone transactions with complete transparency and certification assurance.
             </motion.p>
 
-            <div className="flex flex-col gap-6 mb-10">
+            <div className="flex flex-col gap-6 mb-2 lg:mb-10">
               {[
                 { icon: HiOutlinePhone, title: 'WhatsApp', subtitle: 'Instant response for global buyers' },
                 { icon: HiOutlineMail, title: 'Email', subtitle: 'Global gemstone inquiries' },

@@ -67,13 +67,13 @@ const Certification = () => {
       <Container className="w-full relative z-20 h-full flex flex-col justify-center pointer-events-none">
         
         {/* Title area (Top centered on Desktop and Mobile) */}
-        <div className="w-full pointer-events-auto text-center lg:absolute lg:top-4 lg:left-1/2 lg:-translate-x-1/2 z-30">
+        <div className="w-full pointer-events-auto text-center lg:absolute lg:top-4 lg:left-1/2 lg:-translate-x-1/2 z-30 mt-[22vh] lg:mt-0">
           <motion.h2 
             initial={{ opacity: 0, letterSpacing: '0em' }}
             whileInView={{ opacity: 1, letterSpacing: '0.2em' }}
             viewport={{ once: true }}
             transition={{ duration: 1.5 }}
-            className="text-luxury font-medium uppercase text-[10px] md:text-xs mb-3 tracking-[0.2em]"
+            className="text-luxury font-medium uppercase text-[10px] md:text-xs mb-3 tracking-[0.2em] drop-shadow-[0_2px_8px_rgba(0,0,0,1)] lg:drop-shadow-none"
           >
             Proof of Authenticity
           </motion.h2>
@@ -82,7 +82,7 @@ const Certification = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="text-3xl md:text-4xl lg:text-5xl text-white font-medium drop-shadow-lg leading-tight"
+            className="text-3xl md:text-4xl lg:text-5xl text-white font-medium drop-shadow-[0_4px_12px_rgba(0,0,0,1)] lg:drop-shadow-lg leading-tight"
           >
             Verified & Certified
           </motion.h3>

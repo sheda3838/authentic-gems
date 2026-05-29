@@ -43,7 +43,7 @@ const GemModel = ({ scrollY, isMobile, isTablet, windowHeight }) => {
     }
 
     // 4. Y Offset (CSS -vh moves element UP, which is +Y in 3D)
-    const startY = isMobile ? 0.1 * vHeight : 0.05 * vHeight;
+    const startY = isMobile ? 0.02 * vHeight : 0.05 * vHeight;
     const endY1 = isMobile ? 0.25 * vHeight : 0;
     const endY2 = isMobile ? 0.25 * vHeight : -0.1 * vHeight; // Shift down slightly on desktop
 

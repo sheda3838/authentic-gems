@@ -74,7 +74,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-white/80 hover:text-white p-1 transition-colors"
+            className="lg:hidden text-white/80 hover:text-white p-1 transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <HiX className="text-xl" /> : <HiMenu className="text-xl" />}
@@ -90,9 +90,9 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 15, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
             transition={{ duration: 0.2, ease: "easeInOut" }}
-            className="absolute top-20 left-4 right-4 pointer-events-auto md:hidden bg-card/90 backdrop-blur-2xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl"
+            className="absolute top-20 left-4 right-4 pointer-events-auto lg:hidden bg-card/90 backdrop-blur-2xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl"
           >
-            <div className="flex flex-col items-center justify-center h-full gap-8 p-6">
+            <div className="flex flex-col items-center justify-center h-full gap-5 p-6">
               {isHomePage ? (
                 navLinks.map((link, i) => (
                   <motion.div
@@ -106,7 +106,7 @@ const Navbar = () => {
                       smooth={true}
                       duration={800}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="text-2xl font-medium tracking-[0.2em] uppercase text-white/80 hover:text-luxury transition-colors duration-300 cursor-pointer"
+                      className="text-sm font-medium tracking-[0.2em] uppercase text-white/80 hover:text-luxury transition-colors duration-300 cursor-pointer"
                     >
                       {link.name}
                     </ScrollLink>
@@ -120,7 +120,7 @@ const Navbar = () => {
                   <RouterLink
                     to="/"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-2xl font-medium tracking-[0.2em] uppercase text-white/80 hover:text-luxury transition-colors duration-300 cursor-pointer"
+                    className="text-sm font-medium tracking-[0.2em] uppercase text-white/80 hover:text-luxury transition-colors duration-300 cursor-pointer"
                   >
                     Back to Home
                   </RouterLink>

@@ -78,7 +78,7 @@ const About = () => {
               className="text-4xl md:text-5xl lg:text-6xl font-medium mb-6 text-white leading-[1.1] drop-shadow-lg"
             >
               Authentic Gems <br />
-              <span className="text-3xl md:text-4xl lg:text-5xl text-muted/80 font-light italic mt-2 block">
+              <span className="text-3xl md:text-4xl lg:text-5xl text-white/90 md:text-muted/80 font-light italic mt-2 block drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:drop-shadow-none">
                 International
               </span>
             </motion.h3>
@@ -88,7 +88,7 @@ const About = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="text-base md:text-lg text-muted/70 mb-12 max-w-2xl leading-relaxed font-light"
+              className="text-base md:text-lg font-bold text-white md:text-white mb-12 max-w-2xl leading-relaxed font-medium md:font-light drop-shadow-[0_4px_12px_rgba(0,0,0,1)] md:drop-shadow-none"
             >
               Based in Sri Lanka under Via Codos Private Limited, we are
               dedicated to providing the finest natural gemstones with
@@ -122,18 +122,38 @@ const About = () => {
               ))}
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.8, delay: 0.6 }}
               className="flex flex-col sm:flex-row gap-4 mt-10 w-full sm:w-auto"
             >
-              <ScrollLink to="what-we-offer" smooth={true} duration={800} className="w-full sm:w-auto">
-                <Button variant="primary" className="w-full h-full text-sm px-6 py-3 cursor-pointer">Our Collection</Button>
+              <ScrollLink
+                to="what-we-offer"
+                smooth={true}
+                duration={800}
+                className="w-full sm:w-auto"
+              >
+                <Button
+                  variant="primary"
+                  className="w-full h-full text-sm px-6 py-3 cursor-pointer"
+                >
+                  Our Collection
+                </Button>
               </ScrollLink>
-              <ScrollLink to="buyer-protection" smooth={true} duration={800} className="w-full sm:w-auto">
-                <Button variant="secondary" className="w-full h-full text-sm px-6 py-3 cursor-pointer">Safe Buying Guide</Button>
+              <ScrollLink
+                to="buyer-protection"
+                smooth={true}
+                duration={800}
+                className="w-full sm:w-auto"
+              >
+                <Button
+                  variant="secondary"
+                  className="w-full h-full text-sm px-6 py-3 cursor-pointer"
+                >
+                  Safe Buying Guide
+                </Button>
               </ScrollLink>
             </motion.div>
           </div>

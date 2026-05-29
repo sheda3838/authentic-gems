@@ -7,14 +7,14 @@ import { HiOutlinePlay, HiStar } from 'react-icons/hi';
 
 const Hero = () => {
   return (
-    <section id="hero" className="relative h-screen w-full flex flex-col justify-end pb-12 md:pb-20 overflow-hidden pt-32">
+    <section id="hero" className="relative min-h-[100dvh] lg:h-screen w-full flex flex-col justify-center lg:justify-end pb-12 md:pb-20 overflow-hidden pt-28 lg:pt-32">
       {/* Background gradients */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
         <div className="absolute top-[-10%] left-[20%] w-[50%] h-[50%] rounded-full bg-accent/10 blur-[180px]"></div>
         <div className="absolute bottom-[20%] right-[-10%] w-[40%] h-[40%] rounded-full bg-luxury/10 blur-[150px]"></div>
       </div>
 
-      <Container className="w-full relative z-20 h-full flex flex-col justify-end">
+      <Container className="w-full relative z-20 h-full flex flex-col justify-center lg:justify-end">
         
         {/* Layout grid pushing content to bottom-left and bottom-right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-end w-full pb-4">
@@ -42,14 +42,14 @@ const Hero = () => {
               className="text-5xl md:text-6xl xl:text-7xl font-medium mb-6 leading-[1.05] text-white drop-shadow-2xl"
             >
               Authentic Gems <br />
-              <span className="text-[32px] md:text-5xl xl:text-6xl text-muted/90 font-light italic mt-2 block">International</span>
+              <span className="text-[32px] md:text-5xl xl:text-6xl text-white/90 md:text-white font-light italic mt-2 block drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:drop-shadow-none">International</span>
             </motion.h1>
             
             <motion.p 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 1.2 }}
-              className="text-base md:text-lg text-muted/80 mb-8 md:mb-10 max-w-md leading-relaxed font-light"
+              className="text-base md:text-lg text-white md:text-white mb-8 md:mb-10 max-w-md leading-relaxed font-medium md:font-light drop-shadow-[0_4px_12px_rgba(0,0,0,1)] md:drop-shadow-none"
             >
               Trusted Sri Lankan gemstone export company specializing in premium natural sapphires and rare gems.
             </motion.p>

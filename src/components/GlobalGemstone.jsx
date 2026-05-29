@@ -29,7 +29,7 @@ const GlobalGemstone = () => {
   const xOffsetMobile = useTransform(scrollY, scrollRange, ['0vw', '0vw', '0vw']);
 
   const yOffsetDesktop = useTransform(scrollY, scrollRange, ['-5vh', '0vh', '0vh']);
-  const yOffsetMobile = useTransform(scrollY, scrollRange, ['-10vh', '-25vh', '-25vh']);
+  const yOffsetMobile = useTransform(scrollY, scrollRange, ['-2vh', '-25vh', '-25vh']);
 
   const scaleDesktop = useTransform(scrollY, scrollRange, [1, 0.75, 0.85]);
   const scaleTablet = useTransform(scrollY, scrollRange, [0.85, 0.7, 0.75]);

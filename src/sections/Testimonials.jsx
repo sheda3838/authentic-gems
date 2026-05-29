@@ -4,14 +4,24 @@ import TestimonialRow from '../components/testimonials/TestimonialRow';
 import testimonialsData from '../data/testimonials.json';
 
 const Testimonials = () => {
-  const [row1, setRow1] = useState([]);
-  const [row2, setRow2] = useState([]);
+  const [rows, setRows] = useState([]);
 
   useEffect(() => {
-    // Split the 20 testimonials into two rows of 10
-    const half = Math.ceil(testimonialsData.length / 2);
-    setRow1(testimonialsData.slice(0, half));
-    setRow2(testimonialsData.slice(half));
+    const calculateRows = () => {
+      const isMobile = window.innerWidth < 768;
+      const numRows = isMobile ? 3 : 2;
+      const newRows = [];
+      const itemsPerRow = Math.ceil(testimonialsData.length / numRows);
+
+      for (let i = 0; i < numRows; i++) {
+        newRows.push(testimonialsData.slice(i * itemsPerRow, (i + 1) * itemsPerRow));
+      }
+      setRows(newRows);
+    };
+
+    calculateRows();
+    window.addEventListener('resize', calculateRows);
+    return () => window.removeEventListener('resize', calculateRows);
   }, []);
 
   return (
@@ -32,9 +42,15 @@ const Testimonials = () => {
       </Container>
 
       {/* Marquee Rows Container */}
-      <div className="w-full flex flex-col gap-2 relative z-20">
-        <TestimonialRow testimonials={row1} direction="left" speed="60s" />
-        <TestimonialRow testimonials={row2} direction="right" speed="50s" />
+      <div className="w-full flex flex-col gap-2 relative z-20 mt-4 md:mt-0">
+        {rows.map((row, index) => (
+          <TestimonialRow 
+            key={index}
+            testimonials={row} 
+            direction={index % 2 === 0 ? "left" : "right"} 
+            speed={index % 2 === 0 ? "60s" : "50s"} 
+          />
+        ))}
       </div>
     </section>
   );

@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Royal Blue Sapphire",
+    "image": "/gems/gem1.png",
+    "price": "LKR 400,000",
+    "description": "Premium certified natural Ceylon blue sapphire suitable for collectors and investment.",
+    "type": "Natural",
+    "caratAmount": "2.5 CRT"
+  },
+  {
+    "id": 2,
+    "title": "Cornflower Blue Sapphire",
+    "image": "/gems/gem2.png",
+    "price": "LKR 350,000",
+    "description": "Exquisite velvety blue hue, highly sought after for high-end bespoke jewelry.",
+    "type": "Heated",
+    "caratAmount": "3.1 CRT"
+  },
+  {
+    "id": 3,
+    "title": "Padparadscha Sapphire",
+    "image": "/gems/gem3.png",
+    "price": "LKR 850,000",
+    "description": "Exceptionally rare Sri Lankan pink-orange sapphire with flawless clarity.",
+    "type": "Natural",
+    "caratAmount": "1.8 CRT"
+  },
+  {
+    "id": 4,
+    "title": "Yellow Ceylon Sapphire",
+    "image": "/gems/gem4.png",
+    "price": "LKR 280,000",
+    "description": "Luxury warm-tone variation with brilliant cut and exceptional luster.",
+    "type": "Natural",
+    "caratAmount": "4.2 CRT"
+  },
+  {
+    "id": 5,
+    "title": "Star Sapphire",
+    "image": "/gems/gem5.png",
+    "price": "LKR 500,000",
+    "description": "A magnificent cabochon showcasing a sharp, well-centered six-ray star.",
+    "type": "Natural",
+    "caratAmount": "5.5 CRT"
+  },
+  {
+    "id": 6,
+    "title": "Ruby Pigeon Blood",
+    "image": "/gems/gem6.png",
+    "price": "LKR 1,200,000",
+    "description": "High-end ruby category offering deep, vivid red saturation and premium brilliance.",
+    "type": "Heated",
+    "caratAmount": "2.0 CRT"
+  },
+  {
+    "id": 7,
+    "title": "Alexandrite Gemstone",
+    "image": "/gems/gem7.png",
+    "price": "LKR 950,000",
+    "description": "Rare collector and investment gem featuring a dramatic color change from green to red.",
+    "type": "Natural",
+    "caratAmount": "1.2 CRT"
+  },
+  {
+    "id": 8,
+    "title": "Cat's Eye Chrysoberyl",
+    "image": "/gems/gem8.png",
+    "price": "LKR 620,000",
+    "description": "Very Sri Lankan luxury-market vibe with a distinct, razor-sharp chatoyant band.",
+    "type": "Natural",
+    "caratAmount": "3.8 CRT"
+  }
+]

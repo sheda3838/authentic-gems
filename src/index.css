@@ -7,7 +7,40 @@
   --color-luxury: #D4AF37;
   --color-text: #F8FAFC;
   --color-muted: #94A3B8;
-  --font-sans: "Cormorant Garamond", serif;
+  --font-sans: "MontserratNumbers", "Cormorant Garamond", serif;
+}
+
+@font-face {
+  font-family: 'MontserratNumbers';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Ew-.ttf) format('truetype');
+  unicode-range: U+30-39;
+}
+@font-face {
+  font-family: 'MontserratNumbers';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Ew-.ttf) format('truetype');
+  unicode-range: U+30-39;
+}
+@font-face {
+  font-family: 'MontserratNumbers';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu170w-.ttf) format('truetype');
+  unicode-range: U+30-39;
+}
+@font-face {
+  font-family: 'MontserratNumbers';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v31/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM70w-.ttf) format('truetype');
+  unicode-range: U+30-39;
 }
 
 @layer base {

@@ -20,6 +20,8 @@ const Navbar = () => {
     { name: 'Home', to: 'hero' },
     { name: 'About', to: 'about' },
     { name: 'Certification', to: 'certification' },
+    { name: 'Global Buyers', to: 'global-buyers' },
+    { name: 'Safe Buying', to: 'buyer-protection' },
   ];
 
   return (

@@ -16,6 +16,9 @@ const GlobalGemstone = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Make the entire gemstone layer scroll away naturally after the Certification section
+  const globalY = useTransform(scrollY, [0, windowHeight * 2, windowHeight * 3], [0, 0, -windowHeight]);
+
   const isMobile = windowWidth < 768;
   const isTablet = windowWidth >= 768 && windowWidth < 1024;
 
@@ -37,7 +40,7 @@ const GlobalGemstone = () => {
   const scale = isMobile ? scaleMobile : (isTablet ? scaleTablet : scaleDesktop);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-10 flex items-center justify-center overflow-hidden">
+    <motion.div style={{ y: globalY }} className="fixed inset-0 pointer-events-none z-10 flex items-center justify-center overflow-hidden">
       
       {/* 2D BACK LAYER (Background Glows & Back Orbital Rings) */}
       {/* Uses CSS transforms for buttery smooth 2D GPU acceleration */}
@@ -127,7 +130,7 @@ const GlobalGemstone = () => {
         </motion.div>
       </motion.div>
 
-    </div>
+    </motion.div>
   );
 };
 

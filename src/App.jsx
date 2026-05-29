@@ -4,6 +4,8 @@ import GlobalGemstone from './components/GlobalGemstone';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Certification from './sections/Certification';
+import GlobalBuyers from './sections/GlobalBuyers';
+import BuyerProtection from './sections/BuyerProtection';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Hero />
         <About />
         <Certification />
+        <GlobalBuyers />
+        <BuyerProtection />
       </main>
     </div>
   );

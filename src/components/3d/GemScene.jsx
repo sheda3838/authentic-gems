@@ -14,11 +14,10 @@ const GemModel = ({ scrollY, isMobile, isTablet, windowHeight }) => {
   useFrame((state, delta) => {
     if (!gemRef.current || !scrollY || !windowHeight) return;
 
-    // 1. Calculate Scroll Progress for 2 segments
     const y = scrollY.get();
 
-    let progress1 = 0; // Segment 1: Hero -> About
-    let progress2 = 0; // Segment 2: About -> Certification
+    let progress1 = 0;
+    let progress2 = 0; 
 
     if (y <= windowHeight) {
       progress1 = y / windowHeight;
@@ -27,13 +26,11 @@ const GemModel = ({ scrollY, isMobile, isTablet, windowHeight }) => {
       progress2 = Math.min((y - windowHeight) / windowHeight, 1);
     }
 
-    // 2. Map 3D Viewport Dimensions
     const vWidth = state.viewport.width;
     const vHeight = state.viewport.height;
 
-    // 3. X Offset (Hero: Center -> About: Left -> Cert: Center)
     const targetX1 = isMobile ? 0 : isTablet ? -0.2 * vWidth : -0.25 * vWidth;
-    const targetX2 = 0; // Return to center
+    const targetX2 = 0;
 
     let currentX = 0;
     if (progress2 === 0) {
@@ -42,10 +39,9 @@ const GemModel = ({ scrollY, isMobile, isTablet, windowHeight }) => {
       currentX = THREE.MathUtils.lerp(targetX1, targetX2, progress2);
     }
 
-    // 4. Y Offset (CSS -vh moves element UP, which is +Y in 3D)
     const startY = isMobile ? 0.02 * vHeight : 0.05 * vHeight;
     const endY1 = isMobile ? 0.25 * vHeight : 0;
-    const endY2 = isMobile ? 0.25 * vHeight : -0.1 * vHeight; // Shift down slightly on desktop
+    const endY2 = isMobile ? 0.25 * vHeight : -0.1 * vHeight; 
 
     let currentY = 0;
     if (progress2 === 0) {
@@ -54,7 +50,6 @@ const GemModel = ({ scrollY, isMobile, isTablet, windowHeight }) => {
       currentY = THREE.MathUtils.lerp(endY1, endY2, progress2);
     }
 
-    // 5. Scale applied as a multiplier to base scale (32)
     const startScaleMult = isMobile ? 0.75 : isTablet ? 0.85 : 1;
     const midScaleMult = isMobile ? 0.6 : isTablet ? 0.7 : 0.75;
     const endScaleMult = isMobile ? 0.65 : isTablet ? 0.75 : 0.85;
@@ -74,18 +69,14 @@ const GemModel = ({ scrollY, isMobile, isTablet, windowHeight }) => {
       );
     }
 
-    // 6. Synchronize with the 2D Orbital Ring Float Animation
     const floatTime = state.clock.elapsedTime;
     const floatPx = -15 * Math.cos(floatTime * (Math.PI / 3));
     const float3D = -(floatPx / state.size.height) * vHeight;
 
-    // 7. Apply Transforms
-    // Base scale is 2.4 (32 * 0.075 original GLB node scale)
     gemRef.current.scale.setScalar(2.4 * currentScaleMult);
     gemRef.current.position.x = currentX;
     gemRef.current.position.y = 0.3 + currentY + float3D;
 
-    // 8. Cinematic Rotation
     gemRef.current.rotation.y += delta * 0.2;
     gemRef.current.rotation.x = 0.1;
   });

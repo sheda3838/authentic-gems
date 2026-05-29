@@ -25,6 +25,7 @@ const Home = () => {
           duration: 800,
           smooth: true,
           spy: true,
+          offset: section.startsWith('gem-') ? -120 : 0,
         });
       }, 100);
     } else {

@@ -1,16 +1,62 @@
-# React + Vite
+# VIA-Gems – Authentic Gems International
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- **Live Demo:** [https://authentic-gems.vercel.app/](https://authentic-gems.vercel.app/)
+- **GitHub Repository:** [https://github.com/sheda3838/authentic-gems.git](https://github.com/sheda3838/authentic-gems.git)
 
-Currently, two official plugins are available:
+A modern, high-performance single-page luxury UI/UX website built for showcasing premium Ceylon gemstones to global buyers with a trust-focused user experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Description
 
-## React Compiler
+VIA-Gems is an interactive, visually stunning platform designed for luxury gemstone export. Featuring a dynamic 3D gemstone experience, smooth scroll animations, and a rich, dark-themed luxury aesthetic, this project is crafted to instill trust and highlight the exquisite quality of natural sapphires and rare gems.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- **Frontend Framework:** React
+- **Styling:** Tailwind CSS
+- **Routing:** React Router
+- **3D Rendering:** Three.js / React Three Fiber
+- **Animations:** Framer Motion
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+- **3D Gemstone Hero Section:** An interactive 3D diamond/gemstone model rendered in real-time.
+- **Smooth Scroll-Based Navigation:** Fluid scrolling between landing page sections.
+- **Certifications Trust Section:** Highlighted guarantees of authenticity and expert verification.
+- **Global Buyers Visualization:** An animated world map connecting the Sri Lanka HQ to global markets.
+- **Product Grid with Dynamic JSON Data:** A catalog of premium gems dynamically loaded from data.
+- **Testimonial Marquee System:** A continuous, smoothly looping client review marquee.
+- **Contact Form with Success State:** A clean, user-friendly inquiry form.
+- **Responsive Luxury UI Design:** Perfectly scaled and styled for mobile, tablet, and desktop devices.
+
+## Project Structure
+
+```text
+src/
+├── assets/          # Static assets (images, 3D models)
+├── components/      # Reusable UI components (Navbar, Button, 3D scenes, etc.)
+├── data/            # JSON data files for products and configurations
+├── pages/           # High-level route components
+└── sections/        # Scrollable landing page sections (Hero, About, etc.)
+```
+
+## Installation Steps
+
+1. **Install dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+2. **Start the development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+3. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+**Built for luxury gemstone export experience**
+_Via Codos Private Limited_

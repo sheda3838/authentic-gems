@@ -3,7 +3,6 @@ import TestimonialCard from './TestimonialCard';
 
 const TestimonialRow = ({ testimonials, direction = 'left', speed = '50s' }) => {
   // Triplicate the array to ensure smooth continuous scrolling 
-  // (-33.33% transform matches exactly one set of cards)
   const duped = [...testimonials, ...testimonials, ...testimonials];
 
   return (

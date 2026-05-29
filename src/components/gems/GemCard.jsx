@@ -5,6 +5,7 @@ import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
 const GemCard = ({ gem }) => {
   return (
     <Link 
+      id={`gem-${gem.id}`}
       to={`/gems/${gem.id}`}
       className="group relative flex flex-col bg-white/[0.02] backdrop-blur-md border border-white/5 rounded-2xl overflow-hidden hover:bg-white/[0.04] hover:border-luxury/30 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(212,175,55,0.08)] block"
     >

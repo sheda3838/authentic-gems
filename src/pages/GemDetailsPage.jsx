@@ -9,10 +9,17 @@ const GemDetailsPage = () => {
   const { id } = useParams();
   const [gem, setGem] = useState(null);
 
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll to top when loading
     const foundGem = gemsData.find(g => g.id === parseInt(id));
     setGem(foundGem);
+
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
   }, [id]);
 
   if (!gem) return <div className="min-h-screen bg-background flex items-center justify-center text-luxury">Loading...</div>;
@@ -27,7 +34,7 @@ const GemDetailsPage = () => {
         <Container className="relative z-10 flex flex-col h-full min-h-0">
           
           {/* Back button */}
-          <Link to="/#what-we-offer" className="inline-flex items-center gap-2 text-white/60 hover:text-luxury transition-colors duration-300 mb-6 text-sm font-medium uppercase tracking-widest flex-shrink-0">
+          <Link to={isMobile ? `/#gem-${id}` : "/#what-we-offer"} className="inline-flex items-center gap-2 text-white/60 hover:text-luxury transition-colors duration-300 mb-6 text-sm font-medium uppercase tracking-widest flex-shrink-0">
             <HiOutlineArrowNarrowLeft className="text-lg" />
             Back to Collection
           </Link>

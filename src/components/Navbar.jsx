@@ -1,61 +1,86 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Link as ScrollLink } from 'react-scroll';
-import { Link as RouterLink, useLocation } from 'react-router-dom';
-import { HiMenu, HiX } from 'react-icons/hi';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Link as ScrollLink } from "react-scroll";
+import { Link as RouterLink, useLocation } from "react-router-dom";
+import { HiMenu, HiX } from "react-icons/hi";
 
 const navLinks = [
-  { name: 'Home', to: 'hero' },
-  { name: 'About', to: 'about' },
-  { name: 'Certification', to: 'certification' },
-  { name: 'Buyers', to: 'global-buyers' },
-  { name: 'Safe Buying', to: 'buyer-protection' },
-  { name: 'Collection', to: 'what-we-offer' },
-  { name: 'Testimonials', to: 'testimonials' },
-  { name: 'Contact', to: 'contact' },
+  { name: "Home", to: "hero" },
+  { name: "About", to: "about" },
+  { name: "Certification", to: "certification" },
+  { name: "Buyers", to: "global-buyers" },
+  { name: "Safe Buying", to: "buyer-protection" },
+  { name: "Collection", to: "what-we-offer" },
+  { name: "Testimonials", to: "testimonials" },
+  { name: "Contact", to: "contact" },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const isHomePage = location.pathname === '/';
+  const isHomePage = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
+      {
+        /* hide navbar if scrolling down, show if scrolling up */
+      }
       setScrolled(window.scrollY > 20);
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    // Run once to set initial state
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    // run it once to set initail state
     handleScroll();
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <div className="fixed top-0 w-full z-50 flex justify-center pt-6 px-4 pointer-events-none">
-      <nav className={`pointer-events-auto transition-all duration-500 rounded-full w-full max-w-7xl ${
-        scrolled 
-        ? 'bg-background/40 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] py-3 px-6' 
-        : 'bg-white/[0.03] backdrop-blur-md border border-white/5 py-4 px-8 shadow-[0_4px_24px_rgba(0,0,0,0.2)]'
-      }`}>
+      <nav
+        className={`pointer-events-auto transition-all duration-500 rounded-full w-full max-w-7xl ${
+          scrolled
+            ? "bg-background/40 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] py-3 px-6"
+            : "bg-white/[0.03] backdrop-blur-md border border-white/5 py-4 px-8 shadow-[0_4px_24px_rgba(0,0,0,0.2)]"
+        }`}
+      >
         <div className="flex justify-between items-center w-full">
-          {/* Logo */}
+          {/* our logo bit */}
           {isHomePage ? (
-            <ScrollLink to="hero" smooth={true} duration={800} className="cursor-pointer flex items-center gap-3 group">
-              <img src="/logo.png" alt="Logo" className="w-7 h-7 object-contain rounded-lg" />
-              <span className="text-xs md:text-sm font-medium tracking-[0.15em] text-white/90 group-hover:text-white transition-colors duration-300">AUTHENTIC GEMS</span>
+            <ScrollLink
+              to="hero"
+              smooth={true}
+              duration={800}
+              className="cursor-pointer flex items-center gap-3 group"
+            >
+              <img
+                src="/logo.png"
+                alt="Logo"
+                className="w-7 h-7 object-contain rounded-lg"
+              />
+              <span className="text-xs md:text-sm font-medium tracking-[0.15em] text-white/90 group-hover:text-white transition-colors duration-300">
+                AUTHENTIC GEMS
+              </span>
             </ScrollLink>
           ) : (
-            <RouterLink to="/" className="cursor-pointer flex items-center gap-3 group">
-              <img src="/logo.png" alt="Logo" className="w-7 h-7 object-contain rounded-lg" />
-              <span className="text-xs md:text-sm font-medium tracking-[0.15em] text-white/90 group-hover:text-white transition-colors duration-300">AUTHENTIC GEMS</span>
+            <RouterLink
+              to="/"
+              className="cursor-pointer flex items-center gap-3 group"
+            >
+              <img
+                src="/logo.png"
+                alt="Logo"
+                className="w-7 h-7 object-contain rounded-lg"
+              />
+              <span className="text-xs md:text-sm font-medium tracking-[0.15em] text-white/90 group-hover:text-white transition-colors duration-300">
+                AUTHENTIC GEMS
+              </span>
             </RouterLink>
           )}
 
-          {/* Desktop Nav */}
+          {/* main nav wrapper */}
           {isHomePage && (
             <div className="hidden lg:flex items-center gap-4 xl:gap-8">
               {navLinks.map((link) => (
@@ -72,17 +97,21 @@ const Navbar = () => {
             </div>
           )}
 
-          {/* Mobile Menu Button */}
-          <button 
+          {/* mobile menu button */}
+          <button
             className="lg:hidden text-white/80 hover:text-white p-1 transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <HiX className="text-xl" /> : <HiMenu className="text-xl" />}
+            {mobileMenuOpen ? (
+              <HiX className="text-xl" />
+            ) : (
+              <HiMenu className="text-xl" />
+            )}
           </button>
         </div>
       </nav>
 
-      {/* Mobile Nav Dropdown */}
+      {/* mobile nav dropdown */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div

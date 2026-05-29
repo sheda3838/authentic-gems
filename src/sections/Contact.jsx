@@ -16,14 +16,14 @@ const Contact = () => {
 
   return (
     <section id="contact" className="relative h-screen flex items-center pt-28 pb-8 bg-background z-20 border-t border-white/5 overflow-hidden">
-      {/* Background glow effects */}
+      {/* glowing blurs in the bg */}
       <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-luxury/5 blur-[150px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 translate-x-1/4 translate-y-1/4 w-[600px] h-[600px] bg-accent/5 blur-[150px] rounded-full pointer-events-none" />
 
       <Container className="relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-24 items-center">
           
-          {/* LEFT SIDE: Contact Info */}
+          {/* left side with all the contact deets */}
           <div className="flex flex-col">
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
@@ -69,7 +69,7 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* RIGHT SIDE: Form */}
+          {/* right side with the form block */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -77,7 +77,7 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            {/* Decorative background for form */}
+            {/* slanted bg just for looks */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent rounded-3xl transform rotate-1 scale-[1.02] pointer-events-none border border-white/5" />
             
             <div className="relative bg-[#080B14]/80 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 md:p-8 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">

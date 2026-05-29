@@ -23,11 +23,11 @@ const MapNode = ({ name, cx, cy, delay, labelClasses }) => (
     viewport={{ once: true, margin: "-10%" }}
     transition={{ duration: 0.8, delay, ease: "easeOut" }}
   >
-    {/* Pulsing Glow */}
+    {/* lil pulse glow effect */}
     <div className="absolute w-6 h-6 bg-luxury/40 rounded-full animate-ping" style={{ animationDuration: '3s' }}></div>
-    {/* Core Dot */}
+    {/* the actual dot thing */}
     <div className="w-2 h-2 bg-luxury rounded-full shadow-[0_0_10px_rgba(212,175,55,1)] z-10 relative group-hover:scale-150 transition-transform duration-300"></div>
-    {/* Label */}
+    {/* text name */}
     <div className={`absolute ${labelClasses} text-white font-medium text-[10px] md:text-xs uppercase tracking-widest opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]`}>
       {name}
     </div>
@@ -41,7 +41,7 @@ const GlobalBuyers = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center w-full h-full">
           
-          {/* Left Text Column */}
+          {/* all the words go here */}
           <div className="lg:col-span-5 flex flex-col justify-center z-30">
             <motion.h2 
               initial={{ opacity: 0, letterSpacing: '0em' }}
@@ -80,7 +80,7 @@ const GlobalBuyers = () => {
               We serve buyers across key global markets.
             </motion.p>
 
-            {/* List of Countries */}
+            {/* list of places we ship to */}
             <motion.div 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -111,10 +111,10 @@ const GlobalBuyers = () => {
             </motion.div>
           </div>
 
-          {/* Right Map Column */}
+          {/* map side */}
           <div className="lg:col-span-7 relative w-full h-[50vh] lg:h-[80vh] flex items-center justify-center scale-105 lg:scale-110 origin-center">
             
-            {/* Map Background */}
+            {/* picture of the map */}
             <motion.div 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -124,7 +124,7 @@ const GlobalBuyers = () => {
               style={{ backgroundImage: 'url(/world-map-2.png)' }}
             ></motion.div>
 
-            {/* SVG Connection Lines */}
+            {/* lines conecting the hq to other places */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none z-10 drop-shadow-[0_0_8px_rgba(212,175,55,0.2)]">
               {nodes.map((node, i) => (
                 <motion.line 
@@ -145,7 +145,7 @@ const GlobalBuyers = () => {
               ))}
             </svg>
 
-            {/* Central Node (Sri Lanka) */}
+            {/* home base sri lanka */}
             <motion.div
               className="absolute flex flex-col items-center justify-center transform -translate-x-1/2 -translate-y-1/2 group z-30"
               style={{ left: sriLanka.cx, top: sriLanka.cy }}
@@ -161,7 +161,7 @@ const GlobalBuyers = () => {
               </div>
             </motion.div>
 
-            {/* Destination Nodes */}
+            {/* other dots around the globe */}
             {nodes.map(node => (
               <MapNode key={`node-${node.id}`} {...node} />
             ))}

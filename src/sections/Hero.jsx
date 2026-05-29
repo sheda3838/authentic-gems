@@ -8,7 +8,7 @@ import { HiOutlinePlay, HiStar } from 'react-icons/hi';
 const Hero = () => {
   return (
     <section id="hero" className="relative min-h-[100dvh] lg:h-screen w-full flex flex-col justify-center lg:justify-end pb-12 md:pb-20 overflow-hidden pt-28 lg:pt-32">
-      {/* Background gradients */}
+      {/* bg blurs here so the diamnd pops out */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
         <div className="absolute top-[-10%] left-[20%] w-[50%] h-[50%] rounded-full bg-accent/10 blur-[180px]"></div>
         <div className="absolute bottom-[20%] right-[-10%] w-[40%] h-[40%] rounded-full bg-luxury/10 blur-[150px]"></div>
@@ -16,10 +16,10 @@ const Hero = () => {
 
       <Container className="w-full relative z-20 h-full flex flex-col justify-center lg:justify-end">
         
-        {/* Layout grid pushing content to bottom-left and bottom-right */}
+        {/* grid to keep texts on the sides */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-end w-full pb-4">
           
-          {/* Left Content (Title & CTA) */}
+          {/* main title stuff */}
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -72,10 +72,10 @@ const Hero = () => {
             </motion.div>
           </motion.div>
           
-          {/* Center spacing explicitly reserved for 3D Gemstone via GlobalGemstone */}
+          {/* invisble space for the 3d gem to sit in the middle */}
           <div className="hidden lg:block lg:col-span-1 xl:col-span-3 pointer-events-none"></div>
 
-          {/* Right Content (Floating Review Card) */}
+          {/* review card floatin on the right */}
           <motion.div
             initial={{ opacity: 0, y: 30, x: 20 }}
             animate={{ opacity: 1, y: 0, x: 0 }}
@@ -86,16 +86,16 @@ const Hero = () => {
               whileHover={{ y: -5 }}
               className="bg-white/[0.03] backdrop-blur-2xl border border-white/10 rounded-[28px] p-3 w-full max-w-[260px] relative overflow-hidden shadow-[0_20px_40px_rgba(0,0,0,0.5)] group transition-all duration-500 flex flex-col gap-4 ml-auto"
             >
-              {/* Subtle top border glow on hover */}
+              {/* just a lil glow on hover */}
               <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-luxury/50 to-transparent opacity-30 group-hover:opacity-100 transition-opacity duration-500"></div>
               
-              {/* Top Image */}
+              {/* gem pic */}
               <div className="w-full h-[130px] rounded-2xl overflow-hidden relative shadow-inner">
                 <img src="/gem-card.jpg" alt="Premium Gemstone" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
               </div>
               
               <div className="flex flex-col gap-4 px-2 mt-1">
-                {/* Stars & Trust Text */}
+                {/* stars and trust count */}
                 <div className="flex flex-col gap-1.5">
                   <div className="flex items-center gap-1">
                     {[...Array(5)].map((_, i) => (
@@ -105,7 +105,7 @@ const Hero = () => {
                   <span className="text-white/80 text-[11px] font-medium tracking-wide">Trusted by 10K+ Buyers</span>
                 </div>
                 
-                {/* User Avatars */}
+                {/* fake user faces */}
                 <div className="flex items-center -space-x-2">
                   <img src="https://i.pravatar.cc/100?img=33" alt="User" className="w-8 h-8 rounded-full border-[1.5px] border-[#0a0f1c] shadow-sm relative z-40" />
                   <img src="https://i.pravatar.cc/100?img=47" alt="User" className="w-8 h-8 rounded-full border-[1.5px] border-[#0a0f1c] shadow-sm relative z-30" />
@@ -114,7 +114,7 @@ const Hero = () => {
                 </div>
               </div>
               
-              {/* Bottom Button */}
+              {/* read more btn */}
               <ScrollLink to="testimonials" smooth={true} duration={800} className="w-full mt-1">
                 <button className="w-full bg-gradient-to-r from-luxury to-[#e6c65d] hover:from-[#b8952d] hover:to-[#d4af37] text-[#050816] font-bold text-xs py-3.5 rounded-[14px] transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.25)] hover:shadow-[0_0_25px_rgba(212,175,55,0.4)] cursor-pointer">
                   View all reviews...

@@ -27,7 +27,7 @@ const Testimonials = () => {
   return (
     <section id="testimonials" className="relative h-screen bg-background z-20 pt-28 pb-4 flex flex-col justify-center border-t border-white/5 overflow-hidden">
       <Container className="w-full flex flex-col items-center z-20 mb-6">
-        {/* Section Header */}
+        {/* section header stuff */}
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="text-luxury font-medium uppercase text-[10px] md:text-xs mb-4 tracking-[0.2em]">
             Global Recognition
@@ -41,7 +41,7 @@ const Testimonials = () => {
         </div>
       </Container>
 
-      {/* Marquee Rows Container */}
+      {/* rows that slide sideways */}
       <div className="w-full flex flex-col gap-2 relative z-20 mt-4 md:mt-0">
         {rows.map((row, index) => (
           <TestimonialRow 

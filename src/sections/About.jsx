@@ -55,10 +55,10 @@ const About = () => {
     >
       <Container className="w-full relative z-20 h-full flex flex-col justify-center">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-20 items-center w-full">
-          {/* Left space reserved for the 3D Gemstone sliding in from GlobalGemstone */}
+          {/* empty spot so the 3d diamnd can slide in nice and easy */}
           <div className="hidden lg:block lg:col-span-5 xl:col-span-5 h-full pointer-events-none"></div>
 
-          {/* Right Content */}
+          {/* all the right side text n stuff */}
           <div className="lg:col-span-7 xl:col-span-7 flex flex-col justify-center">
             <motion.h2
               initial={{ opacity: 0, letterSpacing: "0em" }}
@@ -109,7 +109,7 @@ const About = () => {
                   whileHover={{ y: -6 }}
                   className="bg-white/[0.02] backdrop-blur-2xl border border-white/[0.05] rounded-[24px] p-6 hover:bg-white/[0.04] hover:border-luxury/30 shadow-[0_10px_30px_rgba(0,0,0,0.2)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.15)] transition-all duration-500 flex flex-col items-start group relative overflow-hidden h-full"
                 >
-                  {/* Subtle top border luxury glow on hover */}
+                  {/* fancy lil top glow when u hover it */}
                   <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-luxury/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                   <div className="group-hover:scale-110 group-hover:-translate-y-1 transition-transform duration-500 ease-out">

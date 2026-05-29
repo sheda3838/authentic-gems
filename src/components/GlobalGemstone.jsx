@@ -42,7 +42,6 @@ const GlobalGemstone = () => {
   return (
     <motion.div style={{ y: globalY }} className="fixed inset-0 pointer-events-none z-10 flex items-center justify-center overflow-hidden">
       
-      {/* 2D BACK LAYER (Background Glows & Back Orbital Rings) */}
       {/* Uses CSS transforms for buttery smooth 2D GPU acceleration */}
       <motion.div 
         style={{ x: xOffset, y: yOffset }}
@@ -54,7 +53,6 @@ const GlobalGemstone = () => {
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           className="relative w-[400px] h-[400px] md:w-[600px] md:h-[600px] lg:w-[700px] lg:h-[700px] flex items-center justify-center will-change-transform"
         >
-          {/* Layer 1: Background Glows */}
           <div className="absolute inset-0 flex items-center justify-center -z-20">
             <motion.div 
               animate={{ opacity: [0.15, 0.3, 0.15], scale: [1, 1.05, 1] }}
@@ -68,7 +66,6 @@ const GlobalGemstone = () => {
             ></motion.div>
           </div>
 
-          {/* Layer 2: BACK Orbital Curves (Behind Gemstone) */}
           <div className="absolute inset-0 z-0 flex items-center justify-center mix-blend-screen opacity-70">
             <svg viewBox="0 0 400 400" className="w-[80%] h-[80%] absolute">
               <defs>
@@ -98,12 +95,10 @@ const GlobalGemstone = () => {
         </motion.div>
       </motion.div>
 
-      {/* Layer 3: 3D GEMSTONE LAYER (Completely Decoupled from DOM layout) */}
       <div className="absolute inset-0 w-full h-full z-10" style={{ transform: 'translateZ(0)' }}>
         <GemScene scrollY={scrollY} isMobile={isMobile} isTablet={isTablet} windowHeight={windowHeight} />
       </div>
 
-      {/* Layer 4: 2D FRONT LAYER (Front Orbital Rings) */}
       <motion.div 
         style={{ x: xOffset, y: yOffset }}
         className="absolute inset-0 w-full h-full flex items-center justify-center will-change-transform z-20"

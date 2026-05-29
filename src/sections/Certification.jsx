@@ -39,19 +39,19 @@ const ConnectionLines = () => (
         </linearGradient>
       </defs>
       
-      {/* Top Left Line */}
+      {/* line pointing top left */}
       <motion.line x1="50%" y1="50%" x2="calc(50% - 220px)" y2="calc(50% - 130px)" stroke="url(#lineGradLeft)" strokeWidth="1" strokeDasharray="4 4" 
         initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 1.5, ease: "easeOut" }} />
         
-      {/* Top Right Line */}
+      {/* line pointing top right */}
       <motion.line x1="50%" y1="50%" x2="calc(50% + 220px)" y2="calc(50% - 130px)" stroke="url(#lineGradRight)" strokeWidth="1" strokeDasharray="4 4" 
         initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 1.5, ease: "easeOut", delay: 0.1 }} />
         
-      {/* Bottom Left Line */}
+      {/* line pointin bottom left */}
       <motion.line x1="50%" y1="50%" x2="calc(50% - 220px)" y2="calc(50% + 80px)" stroke="url(#lineGradLeft)" strokeWidth="1" strokeDasharray="4 4" 
         initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }} />
         
-      {/* Bottom Right Line */}
+      {/* line pointing bottom right */}
       <motion.line x1="50%" y1="50%" x2="calc(50% + 220px)" y2="calc(50% + 80px)" stroke="url(#lineGradRight)" strokeWidth="1" strokeDasharray="4 4" 
         initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 1.5, ease: "easeOut", delay: 0.3 }} />
     </svg>
@@ -63,10 +63,10 @@ const Certification = () => {
     <section id="certification" className="relative min-h-screen lg:h-screen flex flex-col items-center justify-center bg-transparent pt-32 pb-12 overflow-hidden">
       <ConnectionLines />
       
-      {/* Container provides max-width */}
+      {/* wrapper to keep things centered n nice */}
       <Container className="w-full relative z-20 h-full flex flex-col justify-center pointer-events-none">
         
-        {/* Title area (Top centered on Desktop and Mobile) */}
+        {/* the main heading block */}
         <div className="w-full pointer-events-auto text-center lg:absolute lg:top-4 lg:left-1/2 lg:-translate-x-1/2 z-30 mt-[22vh] lg:mt-0">
           <motion.h2 
             initial={{ opacity: 0, letterSpacing: '0em' }}
@@ -88,14 +88,14 @@ const Certification = () => {
           </motion.h3>
         </div>
 
-        {/* Mobile Layout for Cards (Hidden on Desktop) */}
+        {/* stacked cards for phones only */}
         <div className="flex flex-col gap-4 lg:hidden pointer-events-auto z-10 w-full mt-10">
           {certs.map(cert => (
             <Card key={cert.id} {...cert} />
           ))}
         </div>
 
-        {/* Desktop Absolute Layout for Cards directly around the Center 3D Gem */}
+        {/* floaty cards positioned around the 3d gem on big screens */}
         <div className="hidden lg:block absolute inset-0 z-10 pointer-events-none translate-y-[10vh]">
           {certs.map(cert => (
             <Card key={cert.id} {...cert} />

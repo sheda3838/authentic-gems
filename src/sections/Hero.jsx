@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Container from '../components/Container';
 import Button from '../components/Button';
+import { Link as ScrollLink } from 'react-scroll';
 import { HiOutlinePlay, HiStar } from 'react-icons/hi';
 
 const Hero = () => {
@@ -59,11 +60,15 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 1.4 }}
               className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
             >
-              <Button variant="primary" className="w-full sm:w-auto text-sm px-6 py-3">Explore Gems</Button>
-              <Button variant="secondary" className="gap-2 w-full sm:w-auto text-sm px-6 py-3">
-                <HiOutlinePlay className="text-lg" />
-                Request Video
-              </Button>
+              <ScrollLink to="what-we-offer" smooth={true} duration={800} className="w-full sm:w-auto">
+                <Button variant="primary" className="w-full h-full text-sm px-6 py-3 cursor-pointer">Explore Gems</Button>
+              </ScrollLink>
+              <ScrollLink to="contact" smooth={true} duration={800} className="w-full sm:w-auto">
+                <Button variant="secondary" className="gap-2 w-full h-full text-sm px-6 py-3 cursor-pointer">
+                  <HiOutlinePlay className="text-lg" />
+                  Request Video
+                </Button>
+              </ScrollLink>
             </motion.div>
           </motion.div>
           
@@ -110,9 +115,11 @@ const Hero = () => {
               </div>
               
               {/* Bottom Button */}
-              <button className="w-full mt-1 bg-gradient-to-r from-luxury to-[#e6c65d] hover:from-[#b8952d] hover:to-[#d4af37] text-[#050816] font-bold text-xs py-3.5 rounded-[14px] transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.25)] hover:shadow-[0_0_25px_rgba(212,175,55,0.4)]">
-                View all reviews...
-              </button>
+              <ScrollLink to="testimonials" smooth={true} duration={800} className="w-full mt-1">
+                <button className="w-full bg-gradient-to-r from-luxury to-[#e6c65d] hover:from-[#b8952d] hover:to-[#d4af37] text-[#050816] font-bold text-xs py-3.5 rounded-[14px] transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.25)] hover:shadow-[0_0_25px_rgba(212,175,55,0.4)] cursor-pointer">
+                  View all reviews...
+                </button>
+              </ScrollLink>
             </motion.div>
           </motion.div>
 

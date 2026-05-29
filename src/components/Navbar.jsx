@@ -36,7 +36,7 @@ const Navbar = () => {
 
   return (
     <div className="fixed top-0 w-full z-50 flex justify-center pt-6 px-4 pointer-events-none">
-      <nav className={`pointer-events-auto transition-all duration-500 rounded-full w-full max-w-6xl ${
+      <nav className={`pointer-events-auto transition-all duration-500 rounded-full w-full max-w-7xl ${
         scrolled 
         ? 'bg-background/40 backdrop-blur-2xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] py-3 px-6' 
         : 'bg-white/[0.03] backdrop-blur-md border border-white/5 py-4 px-8 shadow-[0_4px_24px_rgba(0,0,0,0.2)]'

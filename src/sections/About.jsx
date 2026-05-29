@@ -1,6 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Container from "../components/Container";
+import Button from "../components/Button";
+import { Link as ScrollLink } from "react-scroll";
 import {
   HiOutlineGlobe,
   HiOutlineAcademicCap,
@@ -118,6 +120,21 @@ const About = () => {
                   </h4>
                 </motion.div>
               ))}
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="flex flex-col sm:flex-row gap-4 mt-10 w-full sm:w-auto"
+            >
+              <ScrollLink to="what-we-offer" smooth={true} duration={800} className="w-full sm:w-auto">
+                <Button variant="primary" className="w-full h-full text-sm px-6 py-3 cursor-pointer">Our Collection</Button>
+              </ScrollLink>
+              <ScrollLink to="buyer-protection" smooth={true} duration={800} className="w-full sm:w-auto">
+                <Button variant="secondary" className="w-full h-full text-sm px-6 py-3 cursor-pointer">Safe Buying Guide</Button>
+              </ScrollLink>
             </motion.div>
           </div>
         </div>

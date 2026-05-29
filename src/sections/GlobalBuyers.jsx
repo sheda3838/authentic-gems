@@ -1,6 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Container from '../components/Container';
+import Button from '../components/Button';
+import { Link as ScrollLink } from 'react-scroll';
 
 const nodes = [
   { id: 'usa', name: 'USA', cx: '23%', cy: '44%', delay: 0.2, labelClasses: 'bottom-4 -translate-x-1/2 left-1/2' },
@@ -92,6 +94,20 @@ const GlobalBuyers = () => {
                   <span className="text-[10px] md:text-xs uppercase tracking-[0.1em] text-white/90 font-medium">{node.name}</span>
                 </div>
               ))}
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, delay: 0.8 }}
+              className="mt-5 inline-flex"
+            >
+              <ScrollLink to="testimonials" smooth={true} duration={800} className="w-full sm:w-auto">
+                <Button variant="primary" className="w-full sm:w-auto text-sm px-8 py-3 cursor-pointer">
+                  View Client Testimonials
+                </Button>
+              </ScrollLink>
             </motion.div>
           </div>
 

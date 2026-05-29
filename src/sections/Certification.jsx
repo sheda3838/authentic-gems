@@ -6,8 +6,8 @@ import { HiOutlineSparkles, HiOutlineAcademicCap, HiOutlineShieldCheck, HiOutlin
 const certs = [
   { id: 1, text: "100% natural and verified", icon: HiOutlineSparkles, delay: 0.2, posClasses: "lg:right-[calc(50%+200px)] lg:bottom-[calc(50%+100px)]" },
   { id: 2, text: "Professionally evaluated by experts", icon: HiOutlineAcademicCap, delay: 0.3, posClasses: "lg:left-[calc(50%+200px)] lg:bottom-[calc(50%+100px)]" },
-  { id: 3, text: "Provided with official certification", icon: HiOutlineShieldCheck, delay: 0.4, posClasses: "lg:right-[calc(50%+200px)] lg:top-[calc(50%+120px)]" },
-  { id: 4, text: "Fully transparent in treatment and origin", icon: HiOutlineMap, delay: 0.5, posClasses: "lg:left-[calc(50%+200px)] lg:top-[calc(50%+120px)]" }
+  { id: 3, text: "Provided with official certification", icon: HiOutlineShieldCheck, delay: 0.4, posClasses: "lg:right-[calc(50%+200px)] lg:top-[calc(50%+60px)]" },
+  { id: 4, text: "Fully transparent in treatment and origin", icon: HiOutlineMap, delay: 0.5, posClasses: "lg:left-[calc(50%+200px)] lg:top-[calc(50%+60px)]" }
 ];
 
 const Card = ({ text, icon: Icon, delay, posClasses }) => (
@@ -48,11 +48,11 @@ const ConnectionLines = () => (
         initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 1.5, ease: "easeOut", delay: 0.1 }} />
         
       {/* Bottom Left Line */}
-      <motion.line x1="50%" y1="50%" x2="calc(50% - 220px)" y2="calc(50% + 140px)" stroke="url(#lineGradLeft)" strokeWidth="1" strokeDasharray="4 4" 
+      <motion.line x1="50%" y1="50%" x2="calc(50% - 220px)" y2="calc(50% + 80px)" stroke="url(#lineGradLeft)" strokeWidth="1" strokeDasharray="4 4" 
         initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 1.5, ease: "easeOut", delay: 0.2 }} />
         
       {/* Bottom Right Line */}
-      <motion.line x1="50%" y1="50%" x2="calc(50% + 220px)" y2="calc(50% + 140px)" stroke="url(#lineGradRight)" strokeWidth="1" strokeDasharray="4 4" 
+      <motion.line x1="50%" y1="50%" x2="calc(50% + 220px)" y2="calc(50% + 80px)" stroke="url(#lineGradRight)" strokeWidth="1" strokeDasharray="4 4" 
         initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }} transition={{ duration: 1.5, ease: "easeOut", delay: 0.3 }} />
     </svg>
   </div>

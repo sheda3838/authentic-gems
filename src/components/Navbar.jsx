@@ -4,10 +4,20 @@ import { Link as ScrollLink } from 'react-scroll';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { HiMenu, HiX } from 'react-icons/hi';
 
+const navLinks = [
+  { name: 'Home', to: 'hero' },
+  { name: 'About', to: 'about' },
+  { name: 'Certification', to: 'certification' },
+  { name: 'Buyers', to: 'global-buyers' },
+  { name: 'Safe Buying', to: 'buyer-protection' },
+  { name: 'Collection', to: 'what-we-offer' },
+  { name: 'Testimonials', to: 'testimonials' },
+  { name: 'Contact', to: 'contact' },
+];
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('hero');
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
@@ -15,20 +25,14 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Run once to set initial state
+    handleScroll();
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const navLinks = [
-    { name: 'Home', to: 'hero' },
-    { name: 'About', to: 'about' },
-    { name: 'Certification', to: 'certification' },
-    { name: 'Buyers', to: 'global-buyers' },
-    { name: 'Safe Buying', to: 'buyer-protection' },
-    { name: 'Collection', to: 'what-we-offer' },
-    { name: 'Testimonials', to: 'testimonials' },
-    { name: 'Contact', to: 'contact' },
-  ];
 
   return (
     <div className="fixed top-0 w-full z-50 flex justify-center pt-6 px-4 pointer-events-none">
@@ -40,7 +44,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center w-full">
           {/* Logo */}
           {isHomePage ? (
-            <ScrollLink to="hero" smooth={true} duration={800} onSetActive={() => setActiveSection('hero')} spy={true} className="cursor-pointer flex items-center gap-3 group">
+            <ScrollLink to="hero" smooth={true} duration={800} className="cursor-pointer flex items-center gap-3 group">
               <img src="/logo.png" alt="Logo" className="w-7 h-7 object-contain rounded-lg" />
               <span className="text-xs md:text-sm font-medium tracking-[0.15em] text-white/90 group-hover:text-white transition-colors duration-300">AUTHENTIC GEMS</span>
             </ScrollLink>
@@ -60,20 +64,9 @@ const Navbar = () => {
                   to={link.to}
                   smooth={true}
                   duration={800}
-                  spy={true}
-                  onSetActive={() => setActiveSection(link.to)}
-                  className="relative text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium cursor-pointer py-2 group"
+                  className="relative text-[10px] md:text-xs uppercase tracking-[0.2em] font-medium cursor-pointer py-2 group text-muted/60 hover:text-white transition-colors duration-300"
                 >
-                  <span className={`transition-colors duration-300 ${activeSection === link.to ? 'text-white' : 'text-muted/60 group-hover:text-white'}`}>
-                    {link.name}
-                  </span>
-                  {/* Active Indicator Glow */}
-                  {activeSection === link.to && (
-                    <motion.div 
-                      layoutId="navbar-indicator"
-                      className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 bg-luxury rounded-full shadow-[0_0_10px_rgba(212,175,55,1)]"
-                    />
-                  )}
+                  {link.name}
                 </ScrollLink>
               ))}
             </div>

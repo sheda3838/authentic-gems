@@ -10,6 +10,9 @@ import Certification from "../sections/Certification";
 import GlobalBuyers from "../sections/GlobalBuyers";
 import BuyerProtection from "../sections/BuyerProtection";
 import Testimonials from "../sections/Testimonials";
+import Contact from "../sections/Contact";
+import FinalMessage from "../sections/FinalMessage";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const location = useLocation();
@@ -41,7 +44,10 @@ const Home = () => {
         <BuyerProtection />
         <WhatWeOffer />
         <Testimonials />
+        <Contact />
+        <FinalMessage />
       </main>
+      <Footer />
     </>
   );
 };

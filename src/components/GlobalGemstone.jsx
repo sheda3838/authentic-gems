@@ -19,16 +19,18 @@ const GlobalGemstone = () => {
   const isMobile = windowWidth < 768;
   const isTablet = windowWidth >= 768 && windowWidth < 1024;
 
-  const xOffsetDesktop = useTransform(scrollY, [0, 800], ['0vw', '-25vw']);
-  const xOffsetTablet = useTransform(scrollY, [0, 800], ['0vw', '-20vw']);
-  const xOffsetMobile = useTransform(scrollY, [0, 800], ['0vw', '0vw']);
+  const scrollRange = [0, windowHeight, windowHeight * 2];
 
-  const yOffsetDesktop = useTransform(scrollY, [0, 800], ['-5vh', '0vh']);
-  const yOffsetMobile = useTransform(scrollY, [0, 800], ['-10vh', '-25vh']);
+  const xOffsetDesktop = useTransform(scrollY, scrollRange, ['0vw', '-25vw', '0vw']);
+  const xOffsetTablet = useTransform(scrollY, scrollRange, ['0vw', '-20vw', '0vw']);
+  const xOffsetMobile = useTransform(scrollY, scrollRange, ['0vw', '0vw', '0vw']);
 
-  const scaleDesktop = useTransform(scrollY, [0, 800], [1, 0.75]);
-  const scaleTablet = useTransform(scrollY, [0, 800], [0.85, 0.7]);
-  const scaleMobile = useTransform(scrollY, [0, 800], [0.75, 0.6]);
+  const yOffsetDesktop = useTransform(scrollY, scrollRange, ['-5vh', '0vh', '0vh']);
+  const yOffsetMobile = useTransform(scrollY, scrollRange, ['-10vh', '-25vh', '-25vh']);
+
+  const scaleDesktop = useTransform(scrollY, scrollRange, [1, 0.75, 0.85]);
+  const scaleTablet = useTransform(scrollY, scrollRange, [0.85, 0.7, 0.75]);
+  const scaleMobile = useTransform(scrollY, scrollRange, [0.75, 0.6, 0.65]);
 
   const xOffset = isMobile ? xOffsetMobile : (isTablet ? xOffsetTablet : xOffsetDesktop);
   const yOffset = isMobile ? yOffsetMobile : yOffsetDesktop;
@@ -95,7 +97,7 @@ const GlobalGemstone = () => {
 
       {/* Layer 3: 3D GEMSTONE LAYER (Completely Decoupled from DOM layout) */}
       <div className="absolute inset-0 w-full h-full z-10" style={{ transform: 'translateZ(0)' }}>
-        <GemScene scrollY={scrollY} isMobile={isMobile} isTablet={isTablet} />
+        <GemScene scrollY={scrollY} isMobile={isMobile} isTablet={isTablet} windowHeight={windowHeight} />
       </div>
 
       {/* Layer 4: 2D FRONT LAYER (Front Orbital Rings) */}
